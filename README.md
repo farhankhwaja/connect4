@@ -2,7 +2,7 @@
 
 ![connect4](images/image.png)
 
-This a connect 4 game with wager. The game is played between two players. Each player has a wager amount. The winner takes the wager amount of the loser. The game is played on a 6x7 board. The players take turns to drop a piece in the board. The first player to get 4 pieces in a row, column or diagonal wins the game. The game ends in a draw if the board is full and no player has won.
+This an pure blockchain based connect 4 game with wager. The game is played between two players. Each player has a wager amount. The winner takes the wager amount of the loser. The game is played on a 6x7 board. The players take turns to drop a piece in the board. The first player to get 4 pieces in a row, column or diagonal wins the game. The game ends in a draw if the board is full and no player has won.
 
 All actions are on-chain.
 
