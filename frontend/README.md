@@ -1,15 +1,16 @@
 ## Getting Started
 
-Create a project using this example:
+We recommend using [yarn](https://yarnpkg.com/) to install and run your project.
+
+We have used thirdweb nextjs starter-kit example to create this project.
+
+## Install
+
+First, run the development server:
 
 ```bash
-npx thirdweb create --template next-javascript-starter
+yarn install
 ```
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-On `pages/_app.js`, you'll find our `ThirdwebProvider` wrapping your app, this is necessary for our [hooks](https://portal.thirdweb.com/react) and
-[UI Components](https://portal.thirdweb.com/ui-components) to work.
 
 ## Environment Variables
 
@@ -34,7 +35,3 @@ To learn more about thirdweb and Next.js, take a look at the following resources
 - [Templates](https://thirdweb.com/templates)
 
 You can check out [the thirdweb GitHub organization](https://github.com/thirdweb-dev) - your feedback and contributions are welcome!
-
-## Join our Discord!
-
-For any questions, suggestions, join our discord at [https://discord.gg/thirdweb](https://discord.gg/thirdweb).
