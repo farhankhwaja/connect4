@@ -1,5 +1,7 @@
 ## CONNECT4-With-Wager
 
+![connect4](images/image.png)
+
 This a connect 4 game with wager. The game is played between two players. Each player has a wager amount. The winner takes the wager amount of the loser. The game is played on a 6x7 board. The players take turns to drop a piece in the board. The first player to get 4 pieces in a row, column or diagonal wins the game. The game ends in a draw if the board is full and no player has won.
 
 All actions are on-chain.
@@ -30,7 +32,7 @@ Contract can be deployed on any chain.
 ### Steps to run the UI
 
 1. Clone the repo
-2. Goto `ui` folder
+2. Goto `frontend` folder
 3. Run `yarn`
 4. Run `yarn dev`
 5. Open `localhost:3000` in the browser
@@ -39,3 +41,5 @@ Contract can be deployed on any chain.
 
 - [ ] Allow UI to prompt the user and then select the column to put the piece in
 - [x] Update contract code to now check for a win or draw after every move. Only do this after both the users have made atleast 4 moves.
+- [ ] Add new routes to the UI to show the list of games that the user has Active and the list of games that the user has played.
+- [ ] Allow invited users to join the game by clicking on a link
