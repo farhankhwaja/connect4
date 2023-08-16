@@ -25,7 +25,7 @@ contract Connect4WithWager is PermissionsEnumerable {
 
   Game[] public games;
   mapping(uint => Game) public gameToGameStruct;
-  mapping(address => uint[]) public playerToGames;
+  // mapping(address => uint[]) public playerToGames;
 
   event GameCreated(address indexed player1, address indexed player2, uint gameId);
   event GameStarted(address indexed player1, address indexed player2, uint gameId);
@@ -40,13 +40,14 @@ contract Connect4WithWager is PermissionsEnumerable {
 
   function startGame(address _player2) public payable {
     uint id = games.length;
-    require(playerToGames[msg.sender] < 2, "You already have multiple games in progress. Complete them first");
-    require(playerToGames[_player2] < 2, "You already have multiple games in progress. Complete them first");
+    // ToDo: Add a limit to the number of games a player can have in progress
+    // require(playerToGames[msg.sender].length < 2, "You already have multiple games in progress. Complete them first");
+    // require(playerToGames[_player2] < 2, "You already have multiple games in progress. Complete them first");
 
     games.push();
     Game storage newGame = games[id];
-    newGame.players[0] = Player(payable(msg.sender), 1, msg.value);
-    newGame.players[1] = Player(payable(_player2), 2, 0);
+    newGame.players[0] = Player(payable(msg.sender), 1, msg.value, 0);
+    newGame.players[1] = Player(payable(_player2), 2, 0, 0);
     newGame.currentPlayer = 0;
     
     gameToGameStruct[id] = newGame;
@@ -207,7 +208,7 @@ contract Connect4WithWager is PermissionsEnumerable {
     payable(msg.sender).transfer(address(this).balance);
   }
 
-  function allActiveGames(address _playerAddress) public view returns (Game[] game){
+  function allActiveGames(address _playerAddress) public view returns (Game[] memory game){
     Game[] memory activeGames;
     for(uint i = 0; i < games.length; i++){
       if((games[i].players[0].playerAddress == _playerAddress || games[i].players[1].playerAddress == _playerAddress) && games[i].ended == false){
